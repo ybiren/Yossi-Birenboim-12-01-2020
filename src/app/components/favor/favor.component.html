@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let item of (currentConditions$ | async);let ind=index;" [routerLink]="['/home',favoursArr[ind].Key]" >    
-      <div class="favour-item">
-        <div>{{favoursArr[ind].LocalizedName}}</div>
+    <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let item of (currentConditions$ | async);let ind=index;" [routerLink]="['/home',favorsArr[ind].Key]" >    
+      <div class="favor-item">
+        <div>{{favorsArr[ind].LocalizedName}}</div>
         <div class="weather-val">{{item.Temperature.Metric.Value}}</div>
         <div class="weather-txt">{{item.WeatherText}}</div>
       </div>
