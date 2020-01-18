@@ -1,0 +1,30 @@
+:host {
+  display: block;
+}
+.container {
+  font-size: 16px;
+  padding: 20px;
+  *:focus {
+    outline:none !important
+  }
+  .col-md-3.col-sm-6.col-xs-12{
+   padding-bottom: 10px;
+   .favour-item {
+    border:2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .weather-val:after {
+      content: "\00b0\0063";
+      text-transform: uppercase;
+    }
+    .weather-txt {
+        padding-top: 10px;
+    }
+   }
+ }
+}

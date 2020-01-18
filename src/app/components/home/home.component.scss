@@ -1,0 +1,50 @@
+:host {
+  display: block;
+}
+.container {
+  height: 70vh;
+  font-size: 16px;
+  .row {
+    padding: 20px 0;
+  }
+  mat-button-toggle-group {
+    margin-left: 10px;
+    height: 24px; 
+ }
+ mat-button-toggle {
+     height: 24px; 
+     ::ng-deep { 
+       .mat-button-toggle-label-content {
+         line-height: 0px !important;
+       }
+     }
+ }
+  .day-weather {
+      border: 2px solid black;
+      border-radius: 5px;
+      padding: 10px 0 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;   
+   }
+  .row.sel-location {
+    border: 1px solid black;    
+    border-bottom: 0px solid black;
+  }
+  .row.flex-grow-1 {
+    border: 1px solid black;    
+    border-top: 0px solid black;
+    .deg-cel:after {
+        content: "\00b0\0063";
+        text-transform: uppercase;
+    }
+    .deg-fah:after {
+        content: "\00b0\0066";
+        text-transform: uppercase;
+    }
+  }
+  fa {
+    margin-right: 5px;
+  }
+}

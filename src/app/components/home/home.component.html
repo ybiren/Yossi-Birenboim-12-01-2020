@@ -1,0 +1,39 @@
+<div class="container d-flex flex-column">
+  <div class="row">
+    <div class="col d-flex justify-content-center align-items-center">
+      <mat-form-field>
+        <input type="text" (keydown)="validateLocationInput($event)" 
+               (keyup)="getLocations(txrLocationPref.value)" placeholder="Enter Location" matInput 
+               [matAutocomplete]="location" #txrLocationPref >
+          <mat-autocomplete #location="matAutocomplete" [displayWith]="displayFn.bind(this)" 
+                            (optionSelected)='getWeatherForLocation($event.option.value)'>
+            <mat-option *ngFor="let location of (locations$ | async)" [value]="location">
+              {{location.LocalizedName}}
+            </mat-option>
+          </mat-autocomplete>
+      </mat-form-field>
+      <mat-button-toggle-group  [(ngModel)] = "selectedMetric" #toggleGroup="matButtonToggleGroup" (change)="resetMetric()">
+        <mat-button-toggle   *ngFor="let item of metricOptions;" [value]="item">{{item}}</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>    
+    
+  <div class="row sel-location" *ngIf="selLocation">
+    <div class="col-4">
+      <div><fa name="bookmark" *ngIf="isLocatonBookMarked()"></fa>{{selLocation.LocalizedName}}</div>
+    </div>
+    <div  class="offset-4 col-4 d-flex justify-content-end align-items-center">    
+        <fa name="heart-o"></fa>
+        <button type="button" (click)="toggleFavor()" style="font-size: 16px" class="btn-primary btn-sm">{{favorTxt()}}</button>
+    </div>    
+  </div>    
+  <div class="row flex-grow-1 align-items-end" *ngIf="selLocation">
+    <div class="offset-1"></div>
+    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mb-2"  *ngFor="let dy of (dailyForecast$ | async)">
+      <div class="day-weather">
+        <div>{{ getDayStr(dy.EpochDate)}}</div> 
+        <div [ngClass]="getSelectedMetric()">{{dy.Temperature.Maximum.Value}}</div>
+      </div>
+    </div>    
+  </div>
+</div>    

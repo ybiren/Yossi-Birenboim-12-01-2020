@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-sm bg-light">
+    <div>Herolo Weather Task</div>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]="{'active':isCurrUrl('/home')}" href="/home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]="{'active':isCurrUrl('/favor')}" href="/favor">Favorites</a>
+      </li>
+    </ul>
+  </nav>
