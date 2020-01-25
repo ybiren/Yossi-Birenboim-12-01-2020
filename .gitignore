@@ -44,8 +44,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-#source files
-/src/assets/currentConditions.ts
-/src/assets/locations.ts
-/src/assets/dat.ts

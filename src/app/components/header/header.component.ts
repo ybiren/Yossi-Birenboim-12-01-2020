@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,7 @@ import { Location } from '@angular/common';
 })
 export class HeaderComponent implements OnInit {
 
+  public env = environment;
   constructor(private location: Location) { }
 
   ngOnInit() {

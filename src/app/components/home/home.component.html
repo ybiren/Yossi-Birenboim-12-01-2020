@@ -12,7 +12,7 @@
             </mat-option>
           </mat-autocomplete>
       </mat-form-field>
-      <mat-button-toggle-group  [(ngModel)] = "selectedMetric" #toggleGroup="matButtonToggleGroup" (change)="resetMetric()">
+      <mat-button-toggle-group *ngIf="(dailyForecast$ | async) as dailyForecastArr" [(ngModel)] = "selectedMetric" #toggleGroup="matButtonToggleGroup" (change)="resetMetric(dailyForecastArr)">
         <mat-button-toggle   *ngFor="let item of metricOptions;" [value]="item">{{item}}</mat-button-toggle>
       </mat-button-toggle-group>
     </div>

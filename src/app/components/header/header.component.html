@@ -2,10 +2,10 @@
     <div>Herolo Weather Task</div>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" [ngClass]="{'active':isCurrUrl('/home')}" href="/home">Home</a>
+        <a class="nav-link" [ngClass]="{'active':isCurrUrl('/home')}" href="/{{env.baseHref}}home">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [ngClass]="{'active':isCurrUrl('/favor')}" href="/favor">Favorites</a>
+        <a class="nav-link" [ngClass]="{'active':isCurrUrl('/favor')}" href="/{{env.baseHref}}favor">Favorites</a>
       </li>
     </ul>
   </nav>
